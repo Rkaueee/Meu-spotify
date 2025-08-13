@@ -1,6 +1,7 @@
+document.addEventListener('DOMContentLoadeed', () => {
 
 
- const artistists = [
+ const artistsdata = [
     { Name : "henrique e juliano", Image : 'img/artista-henrique-juliano.jpg' } , 
     { Name : "jorge e Mateus ", Image : 'img/artista-jorge-mateus.jpg' } ,
     { Name : "Zé Neto e Cristiano ", Image : 'img/artista-ze-neto.jpg' } , 
@@ -11,7 +12,7 @@
  ];
 
 
- const Albms = [
+ const albumsdata = [
     { Name : "White Noise (Sleep e Relaxation Sounds ",artist: 'Sleepy Jhon', Image : 'img/album-white-noise.jpg' } , 
     { Name : "O Ceu Explica Tudo(Ao Vivo)",artist: 'Henrique e Juliano ', Image : 'img/album-ceu-explica.jpg' } ,
     { Name : "Nada Como um dia Apos o outro ",artist: 'Racionais', Image : 'img/album-racionais.jpg' } ,
@@ -19,7 +20,20 @@
     { Name : "CAJU ",artist: 'liniker', Image : 'img/album-caju.jpg' } , 
     { Name : "Escandalo Intimo",artist: 'Luisa Sonza ', Image : 'img/album-escandalo.jpg' } ,
  ];
-
  
+ const artistsGrind = document.querySelector('.artists-Grid');
+ const albumsgrind = document.querySelector('.albums-grind');
 
+ artistsdata.forEach(artist => {
+   const artistcard = document.createElement('div');
+   artistcard.classList.add('artist-card');
 
+   artistcard.innerHTML = `
+     <img src="${artist.Image}" alt="${artist.Name}">
+      <h3>${artist.Name}</h3>
+       <p>artista</p>
+   `
+   artistsGrind.appendChild(artistcard)
+ })
+
+})
