@@ -30,10 +30,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
    artistcard.innerHTML = `
      <img src="${artist.Image}" alt="${artist.Name}">
-      <h3>${artist.Name}</h3>
-       <p>artista</p>
+     <div>
+          <h3>${artist.Name}</h3>
+          <p>artista</p>
+       </div>
    `
    artistsgrind.appendChild(artistcard)
  })
 
+ albumsdata.forEach(album=> {  
+   const albumcard = document.createElement('div');
+   albumcard.classList.add('albums-card');
+   
+
+   albumcard.innerHTML = `
+     <img src="${album.Image}" alt="${album.Name}">
+     <div>
+          <h3>${album.Name}</h3>
+          <p>${album.artist}</p>
+       </div>
+   `
+   albumsgrind.appendChild(albumcard)
+})
 })
