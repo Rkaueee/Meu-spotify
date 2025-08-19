@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoadeed', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
 
  const artistsdata = [
@@ -21,19 +21,19 @@ document.addEventListener('DOMContentLoadeed', () => {
     { Name : "Escandalo Intimo",artist: 'Luisa Sonza ', Image : 'img/album-escandalo.jpg' } ,
  ];
  
- const artistsGrind = document.querySelector('.artists-Grid');
+ const artistsgrind = document.querySelector('.artists-grind');
  const albumsgrind = document.querySelector('.albums-grind');
 
- artistsdata.forEach(artist => {
+ artistsdata.forEach(artist=> {  
    const artistcard = document.createElement('div');
-   artistcard.classList.add('artist-card');
+   artistcard.classList.add('artists-card');
 
    artistcard.innerHTML = `
      <img src="${artist.Image}" alt="${artist.Name}">
       <h3>${artist.Name}</h3>
        <p>artista</p>
    `
-   artistsGrind.appendChild(artistcard)
+   artistsgrind.appendChild(artistcard)
  })
 
 })
