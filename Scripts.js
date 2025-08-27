@@ -1,55 +1,64 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Lógica para a tela de login
+    const entrarButton = document.getElementById('entrar');
 
- const artistsdata = [
-    { Name : "henrique e juliano", Image : 'img/artista-henrique-juliano.jpg' } , 
-    { Name : "jorge e Mateus ", Image : 'img/artista-jorge-mateus.jpg' } ,
-    { Name : "Zé Neto e Cristiano ", Image : 'img/artista-ze-neto.jpg' } , 
-    { Name : "Gustavo Lima", Image : 'img/artista-gustavo-limma.jpg' } , 
-    { Name : "Luan Santana", Image : 'img/artista-luan-santana.jpg' } , 
-    { Name : "Matheus e Kauan", Image : 'img/artista-mateus-kauan.jpg' } , 
+    if (entrarButton) {
+        entrarButton.addEventListener('click', () => {
+            // Redireciona para o arquivo da tela principal (seu Spotify)
+            window.location.href = 'index.html'; 
+        });
+    }
+
+    // A lógica de renderização de artistas e álbuns já está aqui e funciona
+    // ... seu código de renderização de artistas e álbuns ...
+    const artistsdata = [
+        { Name : "henrique e juliano", Image : 'img/artista-henrique-juliano.jpg' } , 
+        { Name : "jorge e Mateus ", Image : 'img/artista-jorge-mateus.jpg' } ,
+        { Name : "Zé Neto e Cristiano ", Image : 'img/artista-ze-neto.jpg' } , 
+        { Name : "Gustavo Lima", Image : 'img/artista-gustavo-limma.jpg' } , 
+        { Name : "Luan Santana", Image : 'img/artista-luan-santana.jpg' } , 
+        { Name : "Matheus e Kauan", Image : 'img/artista-mateus-kauan.jpg' } , 
+    ];
+
+    const albumsdata = [
+        { Name : "White Noise (Sleep e Relaxation Sounds ",artist: 'Sleepy Jhon', Image : 'img/album-white-noise.jpg' } , 
+        { Name : "O Ceu Explica Tudo(Ao Vivo)",artist: 'Henrique e Juliano ', Image : 'img/album-ceu-explica.jpg' } ,
+        { Name : "Nada Como um dia Apos o outro ",artist: 'Racionais', Image : 'img/album-racionais.jpg' } ,
+        { Name : "HIT ME HARD AND SOFT",artist: 'Billie Eilish', Image : 'img/album-hit-me.jpg' } , 
+        { Name : "CAJU ",artist: 'liniker', Image : 'img/album-caju.jpg' } , 
+        { Name : "Escandalo Intimo",artist: 'Luisa Sonza ', Image : 'img/album-escandalo.jpg' } ,
+    ];
     
- ];
+    const artistsgrind = document.querySelector('.artists-grind');
+    const albumsgrind = document.querySelector('.albums-grind');
 
+    // Verifica se os grids existem antes de tentar renderizar
+    if (artistsgrind && albumsgrind) {
+        artistsdata.forEach(artist=> { 
+            const artistcard = document.createElement('div');
+            artistcard.classList.add('artists-card');
+            artistcard.innerHTML = `
+                <img src="${artist.Image}" alt="${artist.Name}">
+                <div>
+                    <h3>${artist.Name}</h3>
+                    <p>artista</p>
+                </div>
+            `;
+            artistsgrind.appendChild(artistcard);
+        });
 
- const albumsdata = [
-    { Name : "White Noise (Sleep e Relaxation Sounds ",artist: 'Sleepy Jhon', Image : 'img/album-white-noise.jpg' } , 
-    { Name : "O Ceu Explica Tudo(Ao Vivo)",artist: 'Henrique e Juliano ', Image : 'img/album-ceu-explica.jpg' } ,
-    { Name : "Nada Como um dia Apos o outro ",artist: 'Racionais', Image : 'img/album-racionais.jpg' } ,
-    { Name : "HIT ME HARD AND SOFT",artist: 'Billie Eilish', Image : 'img/album-hit-me.jpg' } , 
-    { Name : "CAJU ",artist: 'liniker', Image : 'img/album-caju.jpg' } , 
-    { Name : "Escandalo Intimo",artist: 'Luisa Sonza ', Image : 'img/album-escandalo.jpg' } ,
- ];
- 
- const artistsgrind = document.querySelector('.artists-grind');
- const albumsgrind = document.querySelector('.albums-grind');
-
- artistsdata.forEach(artist=> {  
-   const artistcard = document.createElement('div');
-   artistcard.classList.add('artists-card');
-
-   artistcard.innerHTML = `
-     <img src="${artist.Image}" alt="${artist.Name}">
-     <div>
-          <h3>${artist.Name}</h3>
-          <p>artista</p>
-       </div>
-   `
-   artistsgrind.appendChild(artistcard)
- })
-
- albumsdata.forEach(album=> {  
-   const albumcard = document.createElement('div');
-   albumcard.classList.add('albums-card');
-   
-
-   albumcard.innerHTML = `
-     <img src="${album.Image}" alt="${album.Name}">
-     <div>
-          <h3>${album.Name}</h3>
-          <p>${album.artist}</p>
-       </div>
-   `
-   albumsgrind.appendChild(albumcard)
-})
-})
+        albumsdata.forEach(album=> { 
+            const albumcard = document.createElement('div');
+            albumcard.classList.add('albums-card');
+            albumcard.innerHTML = `
+                <img src="${album.Image}" alt="${album.Name}">
+                <div>
+                    <h3>${album.Name}</h3>
+                    <p>${album.artist}</p>
+                </div>
+            `;
+            albumsgrind.appendChild(albumcard);
+        });
+    }
+});
