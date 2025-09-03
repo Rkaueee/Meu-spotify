@@ -35,7 +35,7 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
-}
+}  
 .nav-Library i,.nav-Library p  {
     color: #b7b3b3;
     font-size: 14px;

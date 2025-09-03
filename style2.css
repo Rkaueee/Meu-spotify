@@ -1,14 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
-
 body {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-family: Arial, sans-serif;
   background-image: linear-gradient(to bottom, #303030, #161616, #020202);
 }
@@ -16,66 +12,66 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
-
 .box {
   background-color: #121212;
   color: white;
-  /* Aumentando o padding para deixar a caixa maior */
-  padding: 220px; 
-  border-radius: 40px;
-  /* Aumentando a largura para 500 pixels */
-  width: 1000px; 
+  padding: 200px;
+  border-radius: 20px;
+  width: 1000px;
   text-align: center;
-  box-shadow: 0 4px 0px rgba(0,0,0,0.5);
+  box-shadow: 1 5px 0px rgba(0,0,0,0.5);
 }
-
 button {
-  display: block; /* Garante que cada botão ocupe uma linha inteira */
-  width: 100%; /* Faz com que os botões preencham a largura do contêiner */
-  padding: 12px 20px; /* Aumenta o preenchimento interno para botões maiores */
-  margin: 10px 0; /* Adiciona espaçamento vertical entre os botões */
-  border: 1px solid white; /* Contorno branco de 1px */
-  border-radius: 40px; /* Deixa os botões bem redondos */
-  background-color: transparent; /* Fundo transparente */
-  color: white; /* Cor do texto branco */
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  border: 1px solid white;
+  border-radius: 40px;
+  background-color: transparent;
+  color: white;
   font-size: 20px;
-  font-weight: bold; /* Deixa o texto em negrito, como no Spotify */
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para o hover */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
-  background-color: #1DB954; /* Cor verde do Spotify ao passar o mouse */
-  color: black; /* Texto preto no hover */
-  border-color: #1DB954; /* Contorno verde no hover */
+  background-color: #1DB954;
+  color: black;
+  border-color: #1DB954;
 }
 
-/* Estilo específico para o botão "Entrar" se quiser diferenciá-lo */
 button#entrar {
-  background-color: white; /* Fundo branco para o botão Entrar */
-  color: black; /* Texto preto */
-  border: none; /* Sem contorno, pois o fundo já é branco */
+  background-color: #1ED760;
+  color: black;
+  border: none;
 }
 
 button#entrar:hover {
-  background-color: #1ED760; /* Verde mais claro no hover */
+  background-color: #1ED760;
 }
 
 input {
   width: 100%;
-  padding: 20px; /* Aumenta o espaçamento interno para deixar o campo maior */
+  padding: 20px;
   margin: 20px 0;
-  border: none;
-  /* Define um pequeno raio para cantos levemente arredondados */
-  border-radius: 5px; 
-  background-color: #333333;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: transparent;
   color: white;
-  font-size: 18px; /* Aumenta o tamanho da fonte para melhor legibilidade */
+  font-size: 18px;
 }
+
 .logo {
-  width: 80px;  /* Ajuste a largura da imagem como desejar */
-    margin-bottom: 20px; /* Adiciona um espaço abaixo da imagem, separando-a do título */
-    padding: center;
+  width: 80px;
+  margin-bottom: 20px;
+  padding: center;
+}
+
+.box button img {
+  height: 20px;
+  width: auto;
+  margin-right: 15px;
 }
